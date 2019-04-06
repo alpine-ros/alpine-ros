@@ -1,4 +1,4 @@
-@@IMPORT bare/Dockerfile
+@@IMPORT kinetic/bare/Dockerfile
 
 RUN apk add --no-cache py2-rosdep \
   && rosdep init \
