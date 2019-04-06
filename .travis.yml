@@ -1,0 +1,10 @@
+language: bash
+
+branches:
+  only:
+    - master
+
+install:
+  - make
+script:
+  - git diff --name-only --exit-code
