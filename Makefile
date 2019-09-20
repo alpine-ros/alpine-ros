@@ -1,12 +1,16 @@
+ROS_DISTROS ?= kinetic melodic
+DOCKERFILES := $(addsuffix /ros-core/Dockerfile,$(ROS_DISTROS))
+ENTRYPOINTS := $(addsuffix /ros-core/ros_entrypoint.sh,$(ROS_DISTROS))
+
 .PHONY: all
-all: kinetic/ros-core/Dockerfile kinetic/ros-core/ros_entrypoint.sh
+all: $(DOCKERFILES)
 
 .PHONY: clean
 clean:
-	rm kinetic/ros-core/Dockerfile kinetic/ros-core/ros_entrypoint.sh
+	rm $(DOCKERFILES) $(ENTRYPOINTS)
 
-kinetic/ros-core/Dockerfile: kinetic/ros-core/.template.Dockerfile kinetic/bare/Dockerfile Makefile template.sh
+%/ros-core/Dockerfile: %/ros-core/.template.Dockerfile %/bare/Dockerfile Makefile template.sh
 	./template.sh < $< > $@
 
-kinetic/ros-core/ros_entrypoint.sh: kinetic/bare/ros_entrypoint.sh
+%/ros-core/ros_entrypoint.sh: %/bare/ros_entrypoint.sh
 	cp $< $@
