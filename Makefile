@@ -1,4 +1,4 @@
-ROS_DISTROS ?= kinetic melodic
+ROS_DISTROS ?= kinetic melodic noetic
 DOCKERFILES := $(addsuffix /ros-core/Dockerfile,$(ROS_DISTROS))
 ENTRYPOINTS := $(addsuffix /ros-core/ros_entrypoint.sh,$(ROS_DISTROS))
 
