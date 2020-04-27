@@ -1,7 +1,7 @@
 FROM alpine:3.7
 
-RUN echo "http://alpine-ros-experimental.dev-sq.work/v3.7/backports" >> /etc/apk/repositories \
-  && echo "http://alpine-ros-experimental.dev-sq.work/v3.7/ros/kinetic" >> /etc/apk/repositories \
+RUN echo "http://alpine-ros.seqsense.org/v3.7/backports" >> /etc/apk/repositories \
+  && echo "http://alpine-ros.seqsense.org/v3.7/ros/kinetic" >> /etc/apk/repositories \
   && echo $'-----BEGIN PUBLIC KEY-----\n\
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnSO+a+rIaTorOowj3c8e\n\
 5St89puiGJ54QmOW9faDsTcIWhycl4bM5lftp8IdcpKadcnaihwLtMLeaHNJvMIP\n\
