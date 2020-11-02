@@ -25,7 +25,7 @@ jobs:
       - name: Build image
         run: |
           eval ${{ matrix.env }}
-          tag=$(echo ${DOCKERFILE_PATH} | sed 's|/|-|g')
+          tag=alpine-ros:$(echo ${DOCKERFILE_PATH} | sed 's|/|-|g')
           cd ${DOCKERFILE_PATH}
           docker build -t ${tag} .
       - name: Login to GitHub Container Registry
@@ -39,6 +39,6 @@ jobs:
         #if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
         run: |
           eval ${{ matrix.env }}
-          tag=$(echo ${DOCKERFILE_PATH} | sed 's|/|-|g')
+          tag=alpine-ros:$(echo ${DOCKERFILE_PATH} | sed 's|/|-|g')
           docker tag ${tag} ghcr.io/${{ github.repository_owner }}/${tag}
           docker push ghcr.io/${{ github.repository_owner }}/${tag}
