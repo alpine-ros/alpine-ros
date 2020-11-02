@@ -1,0 +1,44 @@
+name: build
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        env:
+          - DOCKERFILE_PATH=kinetic/bare
+          - DOCKERFILE_PATH=kinetic/ros-core
+          - DOCKERFILE_PATH=melodic/bare
+          - DOCKERFILE_PATH=melodic/ros-core
+          - DOCKERFILE_PATH=noetic/bare
+          - DOCKERFILE_PATH=noetic/ros-core
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Build image
+        run: |
+          eval ${{ matrix.env }}
+          tag=$(echo ${DOCKERFILE_PATH} | sed 's|/|-|g')
+          cd ${DOCKERFILE_PATH}
+          docker build -t ${tag} .
+      - name: Login to GitHub Container Registry
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.CONTAINER_REGISTRY_TOKEN }}
+      - name: Deploy
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+        run: |
+          eval ${{ matrix.env }}
+          tag=$(echo ${DOCKERFILE_PATH} | sed 's|/|-|g')
+          docker tag ${tag} ghcr.io/${{ github.repository_owner }}/${tag}
+          docker push ghcr.io/${{ github.repository_owner }}/${tag}
