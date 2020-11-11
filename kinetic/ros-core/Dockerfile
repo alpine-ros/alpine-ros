@@ -20,6 +20,8 @@ RUN mkdir -p /usr/lib/python2.7/site-packages/ \
 
 ENV ROS_DISTRO kinetic
 
+RUN apk upgrade --no-cache musl>=1.1.18-r4  # CVE-2019-14697
+
 COPY ros_entrypoint.sh /
 ENTRYPOINT ["/ros_entrypoint.sh"]
 CMD ["sh"]
