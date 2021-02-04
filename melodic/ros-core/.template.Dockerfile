@@ -5,5 +5,5 @@ RUN apk add --no-cache py2-rosdep \
   && sed -i -e 's/ros\/rosdistro\/master/alpine-ros\/rosdistro\/alpine-custom-apk/' /etc/ros/rosdep/sources.list.d/20-default.list
 
 RUN apk add --no-cache \
-  ros-melodic-catkin>=0.7.29 \
-  ros-melodic-ros-core>=1.4.1
+  ros-melodic-catkin\>=0.7.29 \
+  ros-melodic-ros-core\>=1.4.1
