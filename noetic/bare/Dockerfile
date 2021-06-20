@@ -1,7 +1,9 @@
 FROM alpine:3.11
 
-RUN echo "http://alpine-ros.seqsense.org/v3.11/backports" >> /etc/apk/repositories \
-  && echo "http://alpine-ros.seqsense.org/v3.11/ros/noetic" >> /etc/apk/repositories \
+ENV ALPINE_VERSION=3.11
+
+RUN echo "http://alpine-ros.seqsense.org/v${ALPINE_VERSION}/backports" >> /etc/apk/repositories \
+  && echo "http://alpine-ros.seqsense.org/v${ALPINE_VERSION}/ros/noetic" >> /etc/apk/repositories \
   && echo $'-----BEGIN PUBLIC KEY-----\n\
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnSO+a+rIaTorOowj3c8e\n\
 5St89puiGJ54QmOW9faDsTcIWhycl4bM5lftp8IdcpKadcnaihwLtMLeaHNJvMIP\n\
