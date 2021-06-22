@@ -19,6 +19,8 @@ jobs:
           - DOCKERFILE_PATH=melodic/ros-core
           - DOCKERFILE_PATH=noetic/bare
           - DOCKERFILE_PATH=noetic/ros-core
+          - DOCKERFILE_PATH=noetic-3.14/bare
+          - DOCKERFILE_PATH=noetic-3.14/ros-core
     steps:
       - name: Checkout
         uses: actions/checkout@v2
