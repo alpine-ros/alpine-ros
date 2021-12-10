@@ -13,8 +13,6 @@ jobs:
     strategy:
       matrix:
         env:
-          - DOCKERFILE_PATH=kinetic/bare
-          - DOCKERFILE_PATH=kinetic/ros-core
           - DOCKERFILE_PATH=melodic/bare
           - DOCKERFILE_PATH=melodic/ros-core
           - DOCKERFILE_PATH=noetic/bare
