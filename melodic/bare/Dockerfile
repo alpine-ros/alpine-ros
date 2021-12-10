@@ -1,4 +1,4 @@
-FROM alpine:3.8
+FROM alpine:3.8.5
 
 ENV ALPINE_VERSION=3.8
 
