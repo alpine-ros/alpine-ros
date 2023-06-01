@@ -18,7 +18,7 @@ docker pull ghcr.io/alpine-ros/alpine-ros:noetic-3.17-ros-core
 ```
 
 ## Demo
-Basic pub/sub using alpine-ros. You can run below `docker-compose.yml` by `docker-compose up`.
+Basic pub/sub using alpine-ros. You can run below `docker-compose.yml` by `docker compose up`.
 ### ROS 1
 ```docker-compose.yml
 # docker-compose.yml
