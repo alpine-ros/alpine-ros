@@ -3,6 +3,10 @@ Docker image of ROS (Robot Operating System) on Alpine Linux
 
 ## News
 
+### January 2024
+`noetic-3.14` (Alpine 3.14 EOL on May 2023) is dropped. The corresponding images are still available but no longer updated.
+It is highly recommended to update to `noetic-3.17`.
+
 ### May 2023
 ROS2 humble is now available for Alpine 3.17 as `humble-3.17`.
 
