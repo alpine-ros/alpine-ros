@@ -1,3 +1,4 @@
+# syntax = docker/dockerfile:1
 @@IMPORT noetic-3.20/bare/Dockerfile
 
 RUN apk add --no-cache \
