@@ -1,9 +1,9 @@
-ROS_DISTROS ?= humble-3.17 kinetic melodic noetic noetic-3.14 noetic-3.17
+ROS_DISTROS ?= humble-3.17 kinetic melodic noetic noetic-3.14 noetic-3.17 noetic-3.20
 DOCKERFILES := $(addsuffix /ros-core/Dockerfile,$(ROS_DISTROS))
 ENTRYPOINTS := $(addsuffix /ros-core/ros_entrypoint.sh,$(ROS_DISTROS))
 
 .PHONY: all
-all: $(DOCKERFILES)
+all: $(DOCKERFILES) $(ENTRYPOINTS)
 
 .PHONY: clean
 clean:
