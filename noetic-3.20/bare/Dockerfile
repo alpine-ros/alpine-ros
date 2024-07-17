@@ -23,6 +23,10 @@ ENV LC_ALL C.UTF-8
 
 ENV ROS_DISTRO noetic
 
+# Install -dev subpackages by default for compatibility.
+# It can be opted-out by `apk add !ros-dev`
+RUN apk add --no-cache ros-dev
+
 COPY ros_entrypoint.sh /
 ENTRYPOINT ["/ros_entrypoint.sh"]
 CMD ["sh"]
