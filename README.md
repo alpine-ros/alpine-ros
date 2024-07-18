@@ -3,6 +3,11 @@ Docker image of ROS (Robot Operating System) on Alpine Linux
 
 ## News
 
+### July 2024
+`noetic-3.20` is added.
+Since `noetic-3.20`, development files and dependencies are split into `-dev` subpackages.
+Users can remove `-dev` packages by `apk add !ros-dev`.
+
 ### January 2024
 `noetic-3.14` (Alpine 3.14 EOL on May 2023) is dropped. The corresponding images are still available but no longer updated.
 It is highly recommended to update to `noetic-3.17`.
