@@ -13,14 +13,10 @@ jobs:
     strategy:
       matrix:
         env:
-          - DOCKERFILE_PATH=humble-3.17/bare
-          - DOCKERFILE_PATH=humble-3.17/ros-core
           - DOCKERFILE_PATH=humble-3.20/bare
           - DOCKERFILE_PATH=humble-3.20/ros-core
           - DOCKERFILE_PATH=jazzy-3.20/bare
           - DOCKERFILE_PATH=jazzy-3.20/ros-core
-          - DOCKERFILE_PATH=noetic-3.17/bare
-          - DOCKERFILE_PATH=noetic-3.17/ros-core
           - DOCKERFILE_PATH=noetic-3.20/bare
           - DOCKERFILE_PATH=noetic-3.20/ros-core
     steps:
