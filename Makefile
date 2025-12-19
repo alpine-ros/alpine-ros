@@ -1,4 +1,4 @@
-ROS_DISTROS ?= humble-3.17 humble-3.20 jazzy-3.20 kinetic melodic noetic noetic-3.14 noetic-3.17 noetic-3.20
+ROS_DISTROS ?= humble-3.17 humble-3.20 jazzy-3.20 kinetic melodic noetic noetic-3.14 noetic-3.17 noetic-3.20 noetic-3.23
 DOCKERFILES := $(addsuffix /ros-core/Dockerfile,$(ROS_DISTROS))
 ENTRYPOINTS := $(addsuffix /ros-core/ros_entrypoint.sh,$(ROS_DISTROS))
 
