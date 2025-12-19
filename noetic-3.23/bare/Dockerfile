@@ -1,6 +1,6 @@
 # syntax = docker/dockerfile:1
 
-FROM alpine:3.23.0
+FROM alpine:3.23.2
 
 ENV ALPINE_VERSION=3.23
 
