@@ -23,6 +23,7 @@ ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
 
 ENV ROS_DISTRO jazzy
+ENV ROS_VERSION 2
 
 # Install -dev subpackages by default for compatibility.
 # It can be opted-out by `apk add !ros-dev`
