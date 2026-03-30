@@ -2,6 +2,9 @@
 Docker image of ROS (Robot Operating System) on Alpine Linux
 
 ## News
+### March 2026
+`humble-3.23` is added.
+
 ### February 2026
 `jazzy-3.23` is added.
 
